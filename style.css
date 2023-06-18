@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;1,400;1,500&display=swap');
+
+:root{
+    --black: #333;
+    --light-color:#cdaa7c;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,1);
+}
+
+
+
+*{
+    font-family: 'Roboto',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+html{
+    font-size: 63%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+}
+/*navbar style*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--black);
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+    z-index: 10000;
+}
+header .logo img{
+    height: auto;
+}
+header .navbar a {
+      font-size: 1.7rem;
+      padding: 5rem 1.5rem;
+      color: var(--light-color);
+      border: .1rem solid transparent;
+
+}
+header .navbar a.active,
+header .navbar a:hover{
+    color: #fff;
+    border: .1rem solid rgba(205,170,124,0.2);
+}
+header .icons i {
+    cursor: pointer;
+    margin-left:.5rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    background: var(--light-color);
+    text-align: center;
+    font-size: 1.7rem;
+    color: white;
+}
+header .icons i:hover{
+    color: white;
+    background: var(--light-color);
+    transform: rotate(360deg);
+
+}
+header .icons #menu{
+    display: none;
+}
+/*navbar style ends here*/
+@media(max-width: 9991px)
+{
+    html{
+        font-size: 55%;
+    }
+    header{
+        padding: 1rem 2rem;
+    }
+    header .logo img {
+        height: 7rem;
+
+
+    }
+}
+@media(max-width:768px)
+{
+    header .logo img{
+        height: 7rem;
+    }
+    header .icons #menu
+    {
+        display: inline-block;
+    }
+    header .navbar
+    {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #eee;
+        border-top: .1rem solid rgba(205,170,124,0.2);
+        border-bottom: .1rem solid rgba(205,170,124,0.2);
+        padding: 1rem;
+        clip-path: polygon(0 0,100% 0,100% 0, 0 0);
+    }
+    header .navbar.active
+    {
+        clip-path: polygon(0 0,100% 0,100% 100%, 0 100%);
+    }
+    header .navbar a {
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 2rem;
+        background: var(--black);
+    }
+    .welcome .box-container{
+        flex-wrap: wrap;
+    }
+    .welcome .box-container .box
+    {
+        width: 100%;
+    }
+    
+}
+/*slider styling*/
+.home .home-slider .slide{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: flex-start;
+
+
+
+}
+.home .home-slider .slide1{
+    background: url()
+
+}
+.home .home-slider .slide2{
+    background: url()
+}
+.home .home-slider .slide3{
+    background: url()
+}
+.home .home-slider .slide1,
+.home .home-slider .slide2,
+.home .home-slider .slide3
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.home .home-slider .slide .content
+{
+    text-align: center;
+    padding-left: 9rem;
+}
+.home .home-slider .slide .content h3{
+    color: var(--light-color);
+    font-size: 4rem;
+    font-weight: bolder;
+}
+.home .home-slider .slide .content h1{
+    color: black;
+    font-size: 8rem;
+}
+.home .home-slider .slide .content p{
+    color: black;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    padding: .5rem 0;
+    line-height: 1.5;
+    font-weight: 200;
+
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color:black;
+    border: .1rem solid rgba(205,170,124,0.2);
+    background: transparent;
+    cursor: pointer;
+    padding: .8rem 3rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.btn:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--light-color);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: -1;
+    transition: 1s ;
+}
+.btn:hover.btn::before{
+    left: 0;
+}
+
+
+
+/*welcome style start*/
+section{
+    padding: 8rem 9%;
+
+}
+.heading
+{
+    text-align: center;
+    color: var(--black);
+    font-size: 5rem;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+}
+.sub-heading
+{
+    text-align: center;
+    color: var(--light-color);
+    font-size: 2.5rem;
+    padding: .5rem 2rem;
+    font-weight: 400;
+    margin-bottom: 4rem;
+    background: var(--black);
+    display: inline-block;
+}
+/*welcome style start*/
+.welcome .box-container
+{
+    display: flex;
+    gap: 1.5rem;
+
+}
+.welcome .box-containe .box{
+    width: 33%;
+    background: var(--black);
+    box-shadow: var(--box-shadow) ;
+    text-align: center;
+    padding-bottom: 1%;
+
+
+}
+.welcome .box-container .box .image
+{
+    height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+
+}
+.welcome .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+
+
+}
+.welcome .box-container .box .image:hover img{
+    transform: scale(1.1);
+}
+.welcome .box-container .box .content
+{
+    padding: 2rem;
+    padding-top: 2rem;
+
+}
+.welcome .box-container .box .content h3{
+    color: var(--light-color);
+    font-size: 2.2rem;
+    font-weight: 400;
+    font-style: oblique;
+   
+    display: flex;
+    align-items: center;
+}
+.welcome .box-container .box .content p{
+    color: black;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1.5;
+    padding: .5rem 0;
+
+}
+.welcome .box-container .box .content h3:hover{
+    background-color: black;
+    cursor: pointer;
+}
+
+.why-choose .menu-container{
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(50rem,2fr));
+    gap: 5rem 10rem;
+    font-size: 500;
+}
+.our-mem 
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    grid-gap: 1.5rem;
+
+
+}
+.our-mem .item .image img{
+    width: 100%;
+}
+.our-mem .item{
+    position: relative;
+    z-index: 2;
+    
+  
+}
+.our-mem .item::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: none;
+    
+    top: 0;left: 0;right: 0;bottom: 0;
+    background:rgba(0,0,0,.5);
+    z-index: 5;
+
+}
+.our-mem .item:hover.item:before{
+    display: block;
+}
+.our-mem .item .mem-info{
+    position: absolute;
+    top: 130%;
+    left: 0;bottom: 0;right: 0;top: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    text-align: center;
+    transition: 2s;
+
+}
